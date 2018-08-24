@@ -31,12 +31,14 @@ public class WaitForShutdown
         @Override
         public void onShutdown()
         {
+            System.err.println(this.hashCode() + ":shutdown:" + latch);
             latch.countDown();
         }
 
         @Override
         public void onEvent(LongEvent event, long sequence, boolean endOfBatch) throws Exception
         {
+            System.err.println(this.hashCode() + ":onevent:" + value);
             value = 1;
         }
     }

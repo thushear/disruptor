@@ -65,6 +65,9 @@ public class ThreeToOneDisruptor
         private void collate(Object[] output)
         {
             // Do required collation here....
+            for (Object o : output) {
+                System.err.println(o);
+            }
         }
     }
 
